@@ -4,6 +4,7 @@ import time
 
 from selenium import webdriver
 
+# 상수
 TARGET_URL_LIST   = "https://www.starbucks.co.kr/menu/drink_list.do"
 TARGET_URL_DETAIL = "https://www.starbucks.co.kr/menu/drink_view.do?product_cd="
 BS_PARSER         = "html.parser"
