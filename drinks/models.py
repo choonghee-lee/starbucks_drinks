@@ -7,8 +7,8 @@ class Category(models.Model):
         db_table = "categories"
 
 class Size(models.Model):
-    name_kr     = models.CharField(max_length=32)
-    name_en     = models.CharField(max_length=32)
+    name_kr     = models.CharField(max_length=32, null=True)
+    name_en     = models.CharField(max_length=32, null=True)
     milliliter  = models.DecimalField(max_digits=4, decimal_places=3)
     fluid_ounce = models.DecimalField(max_digits=4, decimal_places=3)
 
