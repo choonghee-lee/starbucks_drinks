@@ -91,5 +91,6 @@ for product_number in product_numbers:
     # CPU 쉬는 시간
     time.sleep(TIME_SLEEP)
 
+# 리소스 종료
 csv_open.close()
 driver.quit()
