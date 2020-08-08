@@ -45,20 +45,21 @@ for product_number in product_numbers:
 
     # 사이즈
     size_text    = driver.find_element_by_xpath('//*[@id="product_info01"]').text
-    size_list    = re.sub('[^\w]|ml|fl|oz', ' ', size_text).split()
+    size_list    = re.sub('[^\w\uAC00-\uD7A3.]|ml|fl|oz|\(|\)|\/', ' ', size_text).split()
     size_name_en = ""
     size_name_kr = ""
-    milliliter   = 0
-    fluid_ounce  = 0 
+    milliliter   = ""
+    fluid_ounce  = "" 
 
     if len(size_list) == 4:          # 영어 이름, 한글 이름, 밀리리터, 액량 온스
         size_name_en = size_list[0]
         size_name_kr = size_list[1]
         milliliter   = size_list[2]
         fluid_ounce  = size_list[3]
+    elif len(size_list) == 2:        # 밀리리터, 액상 온스
+        milliliter  = size_list[0]
+        fluid_ounce = size_list[1]
     elif len(size_list) == 1:        # 밀리리터
-        size_name_kr = "병"
-        size_name_en = "Bottle"
         milliliter   = size_list[0]
     
     size = [size_name_en, size_name_kr, milliliter, fluid_ounce]
