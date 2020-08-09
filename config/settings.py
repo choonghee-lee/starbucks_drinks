@@ -38,7 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'drinks.apps.DrinksConfig'
+    # 3rd party
+    'django_extensions',
+
+    # local
+    'drinks.apps.DrinksConfig',
 ]
 
 MIDDLEWARE = [
