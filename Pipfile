@@ -11,6 +11,7 @@ selenium = "*"
 beautifulsoup4 = "*"
 django-extensions = "*"
 pandas = "*"
+mysqlclient = "*"
 
 [requires]
 python_version = "3.8"
